@@ -15,7 +15,7 @@ export default function App() {
             color="white"
           />
         }
-        title="Entrar"
+        title="Entrar Agora"
       />
     </View>
   );
