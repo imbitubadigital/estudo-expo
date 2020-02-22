@@ -68,7 +68,7 @@ const NavigationStacks = createBottomTabNavigator(
     },
   },
   {
-    initialRouteName: 'Restaurants',
+    initialRouteName: 'Acount',
     order: ['Restaurants', 'TopLists', 'Search', 'Acount'],
     tabBarOptions: {
       inactiveTintColor: '#646464',
