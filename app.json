@@ -25,6 +25,15 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "permissions": ["CAMERA_ROLL", "LOCATION"],
+      "package" : "com.google.android.geo.API_KEY" ,
+      "config" : {
+        "googleMaps" : {
+          "apiKey" : "AIzaSyBzg4MlD9HpbbzN6NAttT99x0Dgor0L98c"
+        }
+      }
     }
   }
 }

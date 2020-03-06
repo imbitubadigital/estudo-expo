@@ -1,23 +1,32 @@
-import React from 'react';
-import { Text, ScrollView } from 'react-native';
-
+import React, { useRef } from 'react';
+import { Text, Platform } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import Toast from 'react-native-easy-toast';
 import img from '../../../../assets/images/logo.png';
 import { Logo, Container, Line, Txt, BtnRegister } from './styles';
+import LoginForm from '~/components/Account/LoginForm';
+import LoginFacebook from '~/components/Account/LoginFacebook';
 
 export default function Login({ navigation }) {
+  const toastRef = useRef();
   return (
-    <ScrollView>
+    <KeyboardAwareScrollView
+      enableOnAndroid
+      enableAutomaticScroll
+      /*  keyboardOpeningTime={0} */
+      extraHeight={Platform.select({ android: 200 })}
+    >
       <Logo source={img} resizeMode="contain" />
       <Container>
-        <Text>Form Login</Text>
+        <LoginForm toastRef={toastRef} />
         <CreateAcount navigation={navigation} />
       </Container>
       <Line />
       <Container>
-        <Text>Login Facebook</Text>
-        <Text>Criar conta</Text>
+        <LoginFacebook toastRef={toastRef} navigation={navigation} />
       </Container>
-    </ScrollView>
+      <Toast ref={toastRef} position="center" opacity={0.5} />
+    </KeyboardAwareScrollView>
   );
 }
 

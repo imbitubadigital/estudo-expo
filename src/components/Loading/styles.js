@@ -11,4 +11,5 @@ export const Title = styled.Text`
   color: #00a680;
   text-transform: uppercase;
   margin-top: 10px;
+  text-align: center;
 `;
